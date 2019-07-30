@@ -12,7 +12,7 @@ module Enumerable
     end
 
     #my_each_with_index
-    
+
     def my_each_with_index
 
       for i in 0...self.length
@@ -22,5 +22,20 @@ module Enumerable
       end
 
     end
+
+    #my_select
+    def my_select
+
+      result = []
+
+      self.my_each do |e|
+
+        result << e if yield(e)
+
+        end
+
+       result
+       
+      end
 
  end
