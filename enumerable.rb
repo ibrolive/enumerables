@@ -80,7 +80,44 @@ module Enumerable
       end
 
       false
-      
+
+    end
+
+
+    #my_count
+    
+    def my_count(obj = nil)
+
+      count = 0
+   
+      if block_given?
+
+        self.my_each do |e|
+
+          count += 1 if yield(e)
+
+        end
+
+      else
+
+        if obj
+
+          self.my_each do |e|
+
+            count += 1 if e == obj
+
+          end
+
+        else
+
+          count = self.length
+
+        end
+
+      end
+     
+      count
+
     end
 
  end
