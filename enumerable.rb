@@ -54,7 +54,7 @@ module Enumerable
     end
 
     #my_any?
-    
+
     def my_any?
 
       my_each do |e|
@@ -65,6 +65,22 @@ module Enumerable
 
       false
 
+    end
+
+    #my_none?
+
+    def my_none?
+
+      return true unless block_given?
+  
+      my_each do |e|
+
+        return true unless yield(e)
+
+      end
+
+      false
+      
     end
 
  end
