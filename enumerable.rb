@@ -85,7 +85,7 @@ module Enumerable
 
 
     #my_count
-    
+
     def my_count(obj = nil)
 
       count = 0
@@ -118,6 +118,22 @@ module Enumerable
      
       count
 
+    end
+   
+    #my_map
+
+    def my_map(&block)
+
+      arr = []
+
+      my_each do |e|
+
+        arr << block.call(e)
+
+      end
+
+      arr
+      
     end
 
  end
