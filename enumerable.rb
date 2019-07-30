@@ -149,7 +149,30 @@ module Enumerable
       end
      
       accumulator
-      
+
     end
 
  end
+
+
+    #method to test my_inject
+
+    def multiply_els(arr)
+
+      arr.my_inject { |memo, e| memo * e }
+
+    end
+
+    puts "multiply_els: " + multiply_els([2, 4, 5]).to_s
+
+    #call to test my_count
+
+    ar = [1,2,3,2,5,6]
+    
+    puts "my_count with argument: " + ar.my_count(2).to_s
+
+    puts "my_count without argument: " + ar.my_count.to_s
+
+    puts "my_count with block passed: " + ar.my_count{|x| x % 2 == 0 }.to_s
+
+    puts "Sum without argument: " + [2, 4, 5].my_inject{|acc,nxt| acc + nxt}.to_s 
