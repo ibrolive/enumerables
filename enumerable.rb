@@ -35,7 +35,22 @@ module Enumerable
         end
 
        result
-       
+
       end
+   
+
+    #my_all?
+
+    def my_all?
+
+      my_each do |e|
+
+        return false unless yield(e)
+
+      end
+
+      true
+      
+    end
 
  end
