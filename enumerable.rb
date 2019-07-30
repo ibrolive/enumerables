@@ -133,6 +133,22 @@ module Enumerable
       end
 
       arr
+
+    end
+
+    #my_inject
+
+    def my_inject(obj=nil)
+
+      accumulator = obj ? obj : self.shift
+     
+      self.my_each do |e|
+
+        accumulator = yield(accumulator, e)
+
+      end
+     
+      accumulator
       
     end
 
