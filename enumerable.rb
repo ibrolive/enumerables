@@ -50,7 +50,21 @@ module Enumerable
       end
 
       true
-      
+
+    end
+
+    #my_any?
+    
+    def my_any?
+
+      my_each do |e|
+
+        return true if yield(e)
+
+      end
+
+      false
+
     end
 
  end
